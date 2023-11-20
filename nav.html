@@ -40,27 +40,30 @@
             <div id="dashboard" class='h-[70vh] flex flex-col justify-between '>
 
                 <div class='text-xs font-normal flex flex-col cursor-pointer  py-4 gap-2'>
-                    <div
+                    <div  onClick="View(`0`)" 
                         class=' content text-secondary border border-gray-300 hover:border-r-4 hover:border-r-main px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                         <div class='flex items-center gap-4'>
                             <SiBaremetrics size={18} class='text-main' />
-                            <span onClick="View(`0`)"><a href="#sidenav0"></a>Dashboard</span>
+                            <span>Dashboard</span>
                         </div>
                     </div>
-                    <div
+                    <!-- <a href="#sidenav0"></a> -->
+                    <div onClick="View(`1`)"
                         class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                         <div class='flex items-center gap-4 text-secondary '>
                             <SiBaremetrics size={18} class='text-main' />
-                            <span onClick="View(`1`)"><a href="#sidenav1"></a>Candidate's Report</span>
+                            <span onClick="View(`1`)">Candidate's Report</span>
                         </div>
                     </div>
-                    <div
+                    <!-- <a href="#sidenav1"></a> -->
+                    <div onClick="View(`2`)"
                         class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                         <div class='flex items-center gap-4 text-secondary '>
                             <SiBaremetrics size={18} class='text-main' />
-                            <span onClick="View(`2`)"><a href="#sidenav2"></a>Client's Report</span>
+                            <span >Client's Report</span>
                         </div>
                     </div>
+                    <a href="#sidenav2"></a>
                     <div
                         class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                         <div class='flex items-center gap-4 text-secondary '>
