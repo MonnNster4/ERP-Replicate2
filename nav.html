@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class='font-primary  md:p-4'>
+        <div
+            class=' w-[17rem]   md:top-4  md:left-4  bg-white border border-slate-300  fixed  h-[calc(100vh-2rem)] rounded-md z-50  md:flex md:flex-col transition-all  duration-700'>
+            <div class='flex p-2 justify-end md:hidden '>
+
+            </div>
+            <div class='border-b-2 border-slate-300/40 py-12 '>
+                <div class='flex gap-4 justify-between px-4 items-center'>
+                    <div class='flex items-center font-bold -tracking-wider'>
+                        <h1 class='text-primaryBlack '>Group</h1>
+                        <h1 class='text-primaryRed '>NB</h1>
+                    </div>
+                    <div class='flex flex-col text-primaryGray'>
+                        <span class='text-primaryBlack text-xs font-medium '>Jeremiah Monfiel</span>
+                        <span class='font-semibold text-xs text-primaryGray  '>Position</span>
+                    </div>
+                </div>
+            </div>
+            <div class='h-[70vh] flex flex-col justify-between '>
+
+                <div class='text-xs font-normal flex flex-col cursor-pointer  py-4 gap-2'>
+                    <div
+                        class=' text-secondary border border-gray-300 hover:border-r-4 hover:border-r-main px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
+                        <div class='flex items-center gap-4 '>
+                            <SiBaremetrics size={18} class='text-main' />
+                            <li onClick="View(`0`)"><a href="#sidenav0"><span>Dashboard</span></a></li>
+                        </div>
+                    </div>
+                    <div class='flex gap-4 items-center  text-white '>
+                        <div class='flex w-11/12 m-auto flex-col'>
+                            <div class='flex justify-between h-[35px] items-center px-4 bg-[#4caf4f]  '
+                                onClick={profileListToggle}>
+                                <div class='flex gap-4'>
+                                    <SiBaremetrics size={18} class='text-white' />
+                                    <li onClick="View(`1`)"><a href="#sidenav1"><span>Account</span></a></li>
+                                </div>
+                                <div class='text-white'>
+                                </div>
+                            </div>
+                            <div
+                                class=' bg-white text-black border flex transition-all ease-in-out duration-500 flex-col w-11/12 m-auto   '>
+                                <div
+                                    class=' gap-4 h-[35px] px-8 items-center hover:border-r-4  hover:border-r-[#4caf4f]   '>
+                                    <GiPlagueDoctorProfile size={18} class='text-secondary' />
+                                    <span>Profile</span>
+                                </div>
+                                <div
+                                    class=' gap-4 h-[35px] px-8 items-center hover:border-r-4  hover:border-r-[#4caf4f]   '>
+                                    <GiPlagueDoctorProfile size={18} class='text-secondary' />
+                                    <span>Profile</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class=' text-white border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
+                        <div class='flex items-center gap-4 text-secondary '>
+                            <SiBaremetrics size={18} class='text-main' />
+                            <span>Users</span>
+                        </div>
+                    </div>
+                    </Link>
+                    <div
+                        class=' text-white border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
+                        <div class='flex items-center gap-4 text-secondary '>
+                            <SiBaremetrics size={18} class='text-main' />
+                            <span>Profile</span>
+                        </div>
+                    </div>
+                    <div
+                        class=' text-white border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
+                        <div class='flex items-center gap-4 text-secondary '>
+                            <SiBaremetrics size={18} class='text-main' />
+                            <span>Profile</span>
+                        </div>
+                    </div>
+                    <div
+                        class=' text-secondary border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center'>
+                        <div class='flex items-center gap-4 '>
+                            <AiOutlineUserAdd size={18} class='text-main' />
+                            <span>Create Account</span>
+                        </div>
+                    </div>
+                    </Link>
+                </div>
+
+                <div
+                    class='text-xs text-secondary border border-gray-300 px-4 h-[35px] w-11/12 m-auto flex hover:border-r-4 hover:border-r-[#4caf4f]  cursor-pointer'>
+                    <div class='flex items-center gap-4 '>
+                        <TbLogout2 size={18} class='text-main' />
+                        <span>Logout</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main class=' py-2 md:ml-[285px] bg-screen' id="searchbar">
+            <div
+                class='p-4 flex justify-between items-center shadow-md mx-4 bg-primary z-20  sticky top-0 md:static  m-auto md:justify-end '>
+                <div class='text-white flex md:hidden'>
+
+                </div>
+                <div class='w-[180px] sm:w-[300px]' >
+                    <div class="relative">
+                        <input type="text" id="search"
+                            class="block px-2.5 pb-1.5 pt-3 text-xs w-full border border-gray-300 peer outline-none focus:ring-0  rounded-sm"
+                            placeholder=" " />
+                        <label htmlFor='search'
+                            class="absolute text-xs -top-2  shadow-2xl left-3 bg-secondary text-white px-2 outline-none focus:outline-none rounded-sm ">Search
+                            Here</label>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class='mx-4  p-4 pl-72 data'  id="sidenav0">
+            <div class=' font-medium text-gray-600 py-4'>
+                <h1 class='text-base'>Dashboard / Home</h1>
+                <span class='text-xs'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta,
+                    consectetur?</span>
+            </div>
+            <div
+                class='py-10 flex flex-col items-center gap-4 min-[400px]:grid min-[400px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+                <div class='p-4 border bg-white shadow-sm w-full h-[150px] flex items-center justify-center gap-4'>
+                    <div
+                        class='border  py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
+                        <AiFillFlag class='text-white' />
+                    </div>
+                    <div class='text-gray-600 '>
+                        <span class='text-base font-bold'>95233</span>
+                        <h1 class='text-xs'>Candidates</h1>
+                    </div>
+                </div>
+                <div class='p-4 border bg-white shadow-sm w-full h-[150px] flex items-center justify-center gap-4'>
+                    <div
+                        class='border  py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
+                        <FaUsers class='text-white' />
+                    </div>
+                    <div class='text-gray-600 '>
+                        <span class='text-base font-bold'>5</span>
+                        <h1 class='text-xs'>Total Users</h1>
+                    </div>
+                </div>
+                <div class='p-4 border bg-white shadow-sm  w-full h-[150px] flex items-center justify-center gap-4'>
+                    <div
+                        class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
+                        <MdArrowBackIosNew class='text-white' />
+                    </div>
+                    <div class='text-gray-600'>
+                        <span class='text-base font-bold'>95233</span>
+                        <h1 class='text-xs'>New Clients</h1>
+                    </div>
+                </div>
+                <div class='p-4 border bg-white shadow-sm w-full h-[150px] flex items-center justify-center gap-4'>
+                    <div
+                        class='border  py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
+                        <GiTicket class='text-white' />
+                    </div>
+                    <div class='text-gray-600 '>
+                        <span class='text-base font-bold'>95233</span>
+                        <h1 class='text-xs'>Tickets</h1>
+                    </div>
+                </div>
+            </div>
+            <div class='flex flex-col items-center  gap-4 xl:flex-row xl:items-start '>
+                <div class='bg-white w-full xl:w-1/2 p-4 shadow-sm rounded-md'>
+                    <div class='text-gray-600 text-xs '>
+                        <h1 class='font-semibold'>Your Insights Will Appear Soon</h1>
+                    </div>
+                    <div class='py-4 flex flex-col gap-4 text-gray-600'>
+                        <div
+                            class='bg-gray-200 border-dotted border border-slate-400 w-full flex items-center justify-center flex-col h-[170px]'>
+                            <span class='font-medium-'>Chart</span>
+                        </div>
+                        <div class='flex gap-4 flex-col md:flex-row'>
+                            <div class='h-[150px] bg-slate-300 w-full items-center justify-center flex text-xs'>
+                                <span>Lorem ipsum dolor sit amet.</span>
+                            </div>
+                            <div class='h-[150px] bg-slate-300 w-full items-center justify-center flex text-xs'>
+                                <span>Lorem ipsum dolor sit amet.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='flex flex-col gap-4 lg:flex-row'>
+                    <div class='bg-white h-full p-4  xl:w-[280px] text-xs w-full shadow-sm px-4'>
+                        <div class='border-b-2 text-gray-600 pb-2'>
+                            <span class='font-semibold'>Total Users By Country</span>
+                        </div>
+                        <div class='flex flex-col py-4 gap-2 text-gray-500'>
+                            <div class='flex items-center justify-between '>
+                                <div class=' flex items-center gap-2'>
+                                    <div
+                                        class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
+                                        <FaFlag class='text-white' />
+                                    </div>
+                                    <div class=''>
+                                        <span class='font-medium'>Phillippines</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class='text-xs font-bold'>6.4</span>
+                                </div>
+                            </div>
+                            <div class='flex items-center justify-between '>
+                                <div class=' flex items-center gap-2'>
+                                    <div
+                                        class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
+                                        <FaFlagUsa class='text-white' />
+                                    </div>
+                                    <div class=''>
+                                        <span class='font-medium'>USA</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class='text-xs font-bold'>6.4</span>
+                                </div>
+                            </div>
+                            <div class='flex items-center justify-between '>
+                                <div class=' flex items-center gap-2'>
+                                    <div
+                                        class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
+                                        <FaRegUser class='text-white' />
+                                    </div>
+                                    <div class=''>
+                                        <span class='font-medium'>Canada</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class='text-xs font-bold'>6.4</span>
+                                </div>
+                            </div>
+                            <div class='flex items-center justify-between '>
+                                <div class=' flex items-center gap-2'>
+                                    <div
+                                        class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
+                                        <FaRegUser class='text-white' />
+                                    </div>
+                                    <div class=''>
+                                        <span class='font-medium'>Europe</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class='text-xs font-bold'>5.2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class='bg-white h-full p-4 xl:w-[280px] text-xs w-full shadow-sm px-4'>
+                        <div class='border-b-2 text-gray-600 pb-2'>
+                            <span class='font-semibold'>Updates</span>
+                        </div>
+                        <div class='py-4 text-gray-600 text-justify'>
+                            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus enim harum
+                                praesentium
+                                quia ducimus maiores iste, sunt corporis, nemo, deleniti esse. Esse ad odit magnam,
+                                ratione vitae mollitia autem illo molestiae debitis temporibus inventore incidunt
+                                error
+                                doloribus dolor libero rem doloremque perferendis ea magni velit est consectetur
+                                amet
+                                veritatis! Maxime?</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="data" id="sidenav1" style="padding-left: 20rem;">
+        <p>
+            <b>What Happens Next</b>
+        </p>
+        <ul>
+            <li>
+                The SWA reviews the job order for compliance with program requirements as soon as possible
+                but no later than six business days after receipt.
+            </li>
+            <li>
+                The Chicago NPC reviews the H-2B application and job order for compliance with program
+                requirements within seven business days of receipt.
+            </li>
+            <li>
+                Within seven business days of receipt of the application, the Chicago NPC will notify the
+                employer in wring of the decision to either accept (Noce of Acceptance) or not accept (Noce
+                of Deficiency) the employer's application and/or job order.
+            </li>
+            <li>
+                Within 14 calendar days from the Noce of Acceptance being issued, the employer must follow
+                the instructions provided in the Noce of Acceptance and conduct recruitment.
+            </li>
+        </ul>
+        <p>The final determination will be sent electronically to the employer and Group NB’s legal team.
+        </p>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script>
+
+        hide()
+        $('#sidenav0').show()
+
+        function View() {
+            var data = localStorage.getItem("view")
+
+            if (data == null || data == "") {
+                localStorage.setItem("view", "data")
+                $('#navbarSupportedContent1').css('display', 'block')
+            } else {
+                localStorage.removeItem("view")
+                $('#navbarSupportedContent1').css('display', 'none')
+            }
+
+        }
+
+
+
+        function hide() {
+
+            $("#sidenav0").hide()
+
+            $("#sidenav1").hide()
+
+            $("#sidenav2").hide()
+  
+            $("#sidenav3").hide()
+
+            $("#sidenav4").hide()
+
+            $("#sidenav5").hide()
+
+            $("#sidenav6").hide()
+
+            $("#sidenav7").hide()
+
+        }
+
+
+
+
+        function View(data) {
+            if (data == 0) {
+                $("#searchbar").show();
+                $("#sidenav0").show();
+                $("#sidenav1").hide();
+            }
+
+            else if (data == 1) {
+                $("#sidenav1").show();
+                $("#sidenav0").hide();
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>
