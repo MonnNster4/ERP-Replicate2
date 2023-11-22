@@ -185,9 +185,8 @@
                         <h1 class='font-semibold'>Your Insights Will Appear Soon</h1>
                     </div>
                     <div class='py-4 flex flex-col gap-4 text-gray-600'>
-                        <div
-                            class='bg-gray-200 border-dotted border border-slate-400 w-full flex items-center justify-center flex-col h-[170px]'>
-                            <span class='font-medium-'>Chart</span>
+                        <div>
+                            <canvas id="myChart"></canvas>
                         </div>
                         <div class='flex gap-4 flex-col md:flex-row'>
                             <div class='h-[150px] bg-slate-300 w-full items-center justify-center flex text-xs'>
@@ -290,8 +289,43 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'Candidates',
+                    data:[3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
+                    backgroundColor: "#C70039",
+                    borderColor: "#fff",
+                    borderWidth: 1
+                },
+                {
+                    label: "Clients",
+                    data:[3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
+                    backgroundColor:  "#22092C",
+                    borderColor: "#fff)",
+                    borderWidth: 1
+                },
+            
+            ],
+            },
+            
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
     </script>
+
 
 
 </body>
