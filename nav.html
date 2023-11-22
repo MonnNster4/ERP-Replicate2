@@ -21,7 +21,7 @@
 <body>
     <div class='font-primary  md:p-4'>
         <div
-            class=' w-[17rem]   md:top-4  md:left-4  bg-white border border-slate-300  fixed  h-[calc(100vh-2rem)] rounded-md z-50  md:flex md:flex-col transition-all  duration-700'>
+            class=' w-[17rem] -left-80  md:top-4  md:left-4  bg-white border border-slate-300  fixed  h-[calc(100vh-2rem)] rounded-md z-50  md:flex md:flex-col transition-all  duration-700'>
             <div class='flex p-2 justify-end md:hidden '>
 
             </div>
@@ -40,29 +40,35 @@
             <div id="dashboard" class='h-[70vh] flex flex-col justify-between '>
 
                 <div class='text-xs font-normal flex flex-col cursor-pointer  py-4 gap-2'>
-                    <div  onClick="View(`0`)" 
-                        class=' content text-secondary border border-gray-300 hover:border-r-4 hover:border-r-main px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
-                        <div class='flex items-center gap-4'>
-                            <SiBaremetrics size={18} class='text-main' />
-                            <span>Dashboard</span>
+                    <a href="./nav.html">
+                        <div
+                            class=' content text-secondary border border-gray-300 hover:border-r-4 hover:border-r-main px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
+                            <div class='flex items-center gap-4'>
+                                <SiBaremetrics size={18} class='text-main' />
+                                <span>Dashboard</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <!-- <a href="#sidenav0"></a> -->
-                    <div onClick="View(`1`)"
-                        class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
-                        <div class='flex items-center gap-4 text-secondary '>
-                            <SiBaremetrics size={18} class='text-main' />
-                            <span onClick="View(`1`)">Candidate's Report</span>
+                    <a href="./candidate.html">
+                        <div
+                            class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
+                            <div class='flex items-center gap-4 text-secondary '>
+                                <SiBaremetrics size={18} class='text-main' />
+                                <span>Candidate's Report</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <!-- <a href="#sidenav1"></a> -->
-                    <div onClick="View(`2`)"
-                        class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
-                        <div class='flex items-center gap-4 text-secondary '>
-                            <SiBaremetrics size={18} class='text-main' />
-                            <span >Client's Report</span>
+                    <a href="./client.html">
+                        <div
+                            class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
+                            <div class='flex items-center gap-4 text-secondary '>
+                                <SiBaremetrics size={18} class='text-main' />
+                                <span>Client's Report</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <a href="#sidenav2"></a>
                     <div
                         class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
@@ -96,7 +102,7 @@
                 </div>
 
                 <div
-                    class='text-xs text-secondary border border-gray-300 px-4 h-[35px] w-11/12 m-auto flex hover:border-r-4 hover:border-r-[#4caf4f]  cursor-pointer'>
+                    class='text-xs text-secondary border border-gray-300 px-4 h-[35px] w-11/12 m-auto flex hover:border-r-4 hover:border-r-[#060e06]  cursor-pointer'>
                     <div class='flex items-center gap-4 '>
                         <TbLogout2 size={18} class='text-main' />
                         <span>Logout</span>
@@ -107,98 +113,10 @@
 
         <main class=' py-2 md:ml-[285px] bg-screen' id="searchbar">
             <div
-                class='p-4 flex justify-between items-center shadow-md mx-4 bg-primary z-20  sticky top-0 md:static  m-auto md:justify-between '>
+                class='p-4 flex justify-between items-center shadow-md mx-4 bg-primary z-20  sticky top-0 md:static  m-auto md:justify-end '>
                 <div class='text-white flex md:hidden'>
 
                 </div>
-
-                <div class="pl-3.5">
-                    <button id="dropdownDefault" data-dropdown-toggle="dropdown"
-                        class=" dropdown0 flex  items-center rounded-lg px-2.5 py-2 text-center text-xs font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  hover:bg-gray-50 focus:outline-none focus:ring-4 "
-                        type="button">
-                        Options <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                </div>
-                <!-- Dropdown menu -->
-                <div id="dropdown"
-                    class="z-10 block w-44 divide-y divide-gray-100 rounded bg-white shadow dark:bg-gray-700 hidden"
-                    data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"
-                    style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(327px, 70px, 0px);">
-                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Company</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Position</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Candidate</a>
-                        </li>
-                        <!-- <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
-                                out</a>
-                        </li> -->
-                    </ul>
-                </div>
-
-
-                <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
-
-                <!-- Client's Report -->
-
-                <div class="pl-0 w-full">
-                    <button id="dropdownDefault2" data-dropdown-toggle="dropdown"
-                        class="flex justify-items-start items-center rounded-lg px-2.5 py-2 text-center text-xs font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  hover:bg-gray-50 focus:outline-none focus:ring-4 "
-                        type="button">
-                        Options <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                </div>
-                <!-- Dropdown menu -->
-                <div id="dropdown2"
-                    class="z-10 block w-44 divide-y divide-gray-100 rounded bg-white shadow dark:bg-gray-700 hidden"
-                    data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"
-                    style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(327px, 70px, 0px);">
-                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault2">
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Company</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Position</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">LMIA
-                                Status</a>
-                        </li>
-                        <!-- <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
-                                out</a>
-                        </li> -->
-                    </ul>
-                </div>
-                <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
-
-
-
-
-
-
-
                 <div class='w-[180px] sm:w-[300px]'>
                     <div class="relative">
                         <input type="text" id="search"
@@ -212,7 +130,7 @@
             </div>
         </main>
 
-        <div class='mx-4  p-4 pl-72 data' id="sidenav0">
+        <div class='mx-4  p-4 pl-0 md:ml-[285px] data' id="sidenav0">
             <div class=' font-medium text-gray-600 py-4'>
                 <h1 class='text-base'>Dashboard / Home</h1>
                 <span class='text-xs'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta,
@@ -364,443 +282,15 @@
                 </div>
             </div>
         </div>
-
-    </div>
-
-    <!-- Candidate's Report -->
-    <div class="data" id="sidenav1" style="padding-left: 20rem;">
-
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 p-10">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <!-- <th scope="col" class="p-4">
-                            <div class="flex items-center">
-                                <input id="checkbox-all-search" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                <label for="checkbox-all-search" class="sr-only">checkbox</label>
-                            </div>
-                        </th> -->
-                        <th scope="col" class="px-6 py-3">
-                            Candidate
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Company
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Position
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Recruiter
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Admin
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <!-- <td class="w-4 p-4">
-                            <div class="flex items-center">
-                                <input id="checkbox-table-search-1" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-                            </div>
-                        </td> -->
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Apple MacBook Pro 17"
-                        </th>
-                        <td class="px-6 py-4">
-                            Silver
-                        </td>
-                        <td class="px-6 py-4">
-                            Laptop
-                        </td>
-                        <td class="px-6 py-4">
-                            $2999
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                    </tr>
-                    <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <!-- <td class="w-4 p-4">
-                            <div class="flex items-center">
-                                <input id="checkbox-table-search-2" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                <label for="checkbox-table-search-2" class="sr-only">checkbox</label>
-                            </div>
-                        </td> -->
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Microsoft Surface Pro
-                        </th>
-                        <td class="px-6 py-4">
-                            White
-                        </td>
-                        <td class="px-6 py-4">
-                            Laptop PC
-                        </td>
-                        <td class="px-6 py-4">
-                            $1999
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                    </tr>
-                    <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <!-- <td class="w-4 p-4">
-                            <div class="flex items-center">
-                                <input id="checkbox-table-search-3" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
-                            </div>
-                        </td> -->
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Magic Mouse 2
-                        </th>
-                        <td class="px-6 py-4">
-                            Black
-                        </td>
-                        <td class="px-6 py-4">
-                            Accessories
-                        </td>
-                        <td class="px-6 py-4">
-                            $99
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                    </tr>
-                    <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <!-- <td class="w-4 p-4">
-                            <div class="flex items-center">
-                                <input id="checkbox-table-search-3" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
-                            </div>
-                        </td> -->
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Apple Watch
-                        </th>
-                        <td class="px-6 py-4">
-                            Black
-                        </td>
-                        <td class="px-6 py-4">
-                            Watches
-                        </td>
-                        <td class="px-6 py-4">
-                            $199
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <nav class="flex items-center flex-column flex-wrap md:flex-row justify-between pt-4 p-2.5"
-                aria-label="Table navigation">
-                <span
-                    class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">Showing
-                    <span class="font-semibold text-gray-900 dark:text-white">1-10</span> of <span
-                        class="font-semibold text-gray-900 dark:text-white">1000</span></span>
-                <ul class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-                    </li>
-                    <li>
-                        <a href="#" aria-current="page"
-                            class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-
-    </div>
-
-    <!-- Client's Report -->
-    <div class="data" id="sidenav2" style="padding-left: 20rem;">
-
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 p-10">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <!-- <th scope="col" class="p-4">
-                            <div class="flex items-center">
-                                <input id="checkbox-all-search" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                <label for="checkbox-all-search" class="sr-only">checkbox</label>
-                            </div>
-                        </th> -->
-                        <th scope="col" class="px-6 py-3">
-                            Company
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Position
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            LMIA STATUS
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <!-- <td class="w-4 p-4">
-                            <div class="flex items-center">
-                                <input id="checkbox-table-search-1" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-                            </div>
-                        </td> -->
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Apple MacBook Pro 17"
-                        </th>
-                        <td class="px-6 py-4">
-                            Silver
-                        </td>
-                        <td class="px-6 py-4">
-                            Laptop
-                        </td>
-                    </tr>
-                    <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <!-- <td class="w-4 p-4">
-                            <div class="flex items-center">
-                                <input id="checkbox-table-search-2" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                <label for="checkbox-table-search-2" class="sr-only">checkbox</label>
-                            </div>
-                        </td> -->
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Microsoft Surface Pro
-                        </th>
-                        <td class="px-6 py-4">
-                            White
-                        </td>
-                        <td class="px-6 py-4">
-                            Laptop PC
-                        </td>
-                        <!-- <td class="px-6 py-4">
-                            $1999
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td> -->
-                    </tr>
-                    <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <!-- <td class="w-4 p-4">
-                            <div class="flex items-center">
-                                <input id="checkbox-table-search-3" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
-                            </div>
-                        </td> -->
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Magic Mouse 2
-                        </th>
-                        <td class="px-6 py-4">
-                            Black
-                        </td>
-                        <td class="px-6 py-4">
-                            Accessories
-                        </td>
-                        <!-- <td class="px-6 py-4">
-                            $99
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td> -->
-                    </tr>
-                    <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <!-- <td class="w-4 p-4">
-                            <div class="flex items-center">
-                                <input id="checkbox-table-search-3" type="checkbox"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                <label for="checkbox-table-search-3" class="sr-only">checkbox</label>
-                            </div>
-                        </td> -->
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Apple Watch
-                        </th>
-                        <td class="px-6 py-4">
-                            Black
-                        </td>
-                        <td class="px-6 py-4">
-                            Watches
-                        </td>
-                        <!-- <td class="px-6 py-4">
-                            $199
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td> -->
-                    </tr>
-                </tbody>
-            </table>
-            <nav class="flex items-center flex-column flex-wrap md:flex-row justify-between pt-4 p-2.5"
-                aria-label="Table navigation">
-                <span
-                    class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">Showing
-                    <span class="font-semibold text-gray-900 dark:text-white">1-10</span> of <span
-                        class="font-semibold text-gray-900 dark:text-white">1000</span></span>
-                <ul class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-                    </li>
-                    <li>
-                        <a href="#" aria-current="page"
-                            class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-
     </div>
 
 
 
 
-    </div>
-    </div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script>
-
-    
-
-
-
-        hide()
-        $('#sidenav0').show()
-
-        function View() {
-            var data = localStorage.getItem("view")
-
-            if (data == null || data == "") {
-                localStorage.setItem("view", "data")
-                $('#navbarSupportedContent1').css('display', 'block')
-            } else {
-                localStorage.removeItem("view")
-                $('#navbarSupportedContent1').css('display', 'none')
-            }
-
-        }
-
-
-
-        function hide() {
-
-            $("#sidenav0").hide()
-
-            $("#sidenav1").hide()
-
-            $("#sidenav2").hide()
-
-            $("#sidenav3").hide()
-
-            $("#sidenav4").hide()
-
-            $("#sidenav5").hide()
-
-            $("#sidenav6").hide()
-
-            $("#sidenav7").hide()
-
-            $('#dropdown0').hide()
-
-        }
-
-
-
-
-        function View(data) {
-            if (data == 0) {
-                $("#searchbar").show();
-                $("#sidenav0").show();
-                $("#sidenav1").hide();
-                $("#sidenav2").hide();
-                $("#dropdownDefault").hide();
-
-            }
-
-            else if (data == 1) {
-                $("#sidenav1").show();
-                $("#sidenav0").hide();
-                $("#sidenav2").hide();
-                $("#dropdownDefault").show();
-                $("#dropdownDefault2").hide();
-
-
-            }
-
-            else if (data == 2) {
-                $("#sidenav2").show();
-                $("#sidenav0").hide();
-                $("#sidenav1").hide();
-                $("#dropdownDefault2").show();
-                $("#dropdownDefault").hide();
-
-
-            }
-
-            else if (data == 10) {
-                $("#dropdown0").show();
-
-            }
-        }
-
-
-
     </script>
 
 
