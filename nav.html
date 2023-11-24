@@ -6,6 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        primary: ['Red Hat Display', "sans-serif"],
+                        secondary: ['Roboto', 'sans-serif']
+                    },
+                    textColor: {
+                        primaryBlack: "#22092C",
+                        primaryRed: "#C70039",
+                        primaryGray: "#4B5563"
+                    },
+                    backgroundColor: {
+                        primary: "#22092C",
+                        secondary: "#C70039",
+                        tertiary: "#9D9D9D",
+                        hover: "#4caf4f",
+                        mainWhite: "#fff",
+                        screen: "#eceff180"
+                    },
+                    borderColor: {
+                        primaryBlack: "#22092C",
+                        primaryRed: "#C70039",
+                    }
+                },
+            }
+        }
+    </script>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
 
     <title>Document</title>
@@ -27,13 +60,12 @@
             </div>
             <div class='border-b-2 border-slate-300/40 py-12 '>
                 <div class='flex gap-4 justify-between px-4 items-center'>
-                    <div class='flex items-center font-bold -tracking-wider'>
-                        <h1 class='text-primaryBlack '>Group</h1>
-                        <h1 class='text-primaryRed '>NB</h1>
+                    <div class='flex items-center hover:scale-105 transition ease-in-out duration-500 cursor-pointer'>
+                        <img src="./img/groupnblogo.png" class='w-[95px] bg-white' alt='image' loading='lazy'></img>
                     </div>
                     <div class='flex flex-col text-primaryGray'>
                         <span class='text-primaryBlack text-xs font-medium '>Jeremiah Monfiel</span>
-                        <span class='font-semibold text-xs text-primaryGray  '>Position</span>
+                        <span class='font-semibold text-xs text-primaryRed   '>Position</span>
                     </div>
                 </div>
             </div>
@@ -44,7 +76,7 @@
                         <div
                             class=' content text-secondary border border-gray-300 hover:border-r-4 hover:border-r-main px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                             <div class='flex items-center gap-4'>
-                                <SiBaremetrics size={18} class='text-main' />
+                                <i class="fa-solid fa-chart-pie text-primaryRed text-sm"></i>
                                 <span>Dashboard</span>
                             </div>
                         </div>
@@ -54,7 +86,7 @@
                         <div
                             class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                             <div class='flex items-center gap-4 text-secondary '>
-                                <SiBaremetrics size={18} class='text-main' />
+                                <i class="fa-solid fa-users text-primaryRed text-sm"></i>
                                 <span>Candidate's Report</span>
                             </div>
                         </div>
@@ -64,7 +96,7 @@
                         <div
                             class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                             <div class='flex items-center gap-4 text-secondary '>
-                                <SiBaremetrics size={18} class='text-main' />
+                                <i class="fa-solid fa-file-invoice text-primaryRed text-sm"></i>
                                 <span>Client's Report</span>
                             </div>
                         </div>
@@ -73,21 +105,21 @@
                     <div
                         class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                         <div class='flex items-center gap-4 text-secondary '>
-                            <SiBaremetrics size={18} class='text-main' />
+                            <i class="fa-solid fa-bars-progress text-primaryRed text-sm"></i>
                             <span>Progression Report</span>
                         </div>
                     </div>
                     <div
                         class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                         <div class='flex items-center gap-4 text-secondary '>
-                            <SiBaremetrics size={18} class='text-main' />
+                            <i class="fa-solid fa-gears text-primaryRed text-sm"></i>
                             <span>Task Manager</span>
                         </div>
                     </div>
                     <div
                         class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                         <div class='flex items-center gap-4 text-secondary '>
-                            <SiBaremetrics size={18} class='text-main' />
+                            <i class="fa-solid fa-user-gear text-primaryRed text-sm"></i>
                             <span>User Management</span>
                         </div>
                     </div>
@@ -111,178 +143,248 @@
             </div>
         </div>
 
-        <main class=' py-2 md:ml-[285px] bg-screen' id="searchbar">
-            <div
-                class='p-4 flex justify-between items-center shadow-md mx-4 bg-primary z-20  sticky top-0 md:static  m-auto md:justify-end '>
-                <div class='text-white flex md:hidden'>
+        <main class=' py-2 md:ml-[280px] bg-screen'>
+            <div class='sticky top-0'>
+                <div
+                    class='p-2 md:p-4 flex justify-between items-center shadow-md mx-4 z-20 bg-secondary  m-auto md:justify-end '>
+                    <div class='text-white flex md:hidden absolute top-4  '>
+                        <button>
+                            <!-- <FaBars /> -->
+                        </button>
+
+                    </div>
 
                 </div>
-                <div class='w-[180px] sm:w-[300px]'>
-                    <div class="relative">
-                        <input type="text" id="search"
-                            class="block px-2.5 pb-1.5 pt-3 text-xs w-full border border-gray-300 peer outline-none focus:ring-0  rounded-sm"
-                            placeholder=" " />
-                        <label htmlFor='search'
-                            class="absolute text-xs -top-2  shadow-2xl left-3 bg-secondary text-white px-2 outline-none focus:outline-none rounded-sm bg-[#4caf4f] ">Search
-                            Here</label>
+                <div class='mx-4 p-4 md:p-2 bg-primary '>
+                </div>
+
+
+
+                <div class='mx-4  p-4 pl-0 md:ml-[16px] data' id="sidenav0">
+                    <div class=' font-medium text-gray-600 py-4'>
+                        <h1 class='text-base'>Dashboard / Home</h1>
+                        <span class='text-xs'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta,
+                            consectetur?</span>
+                    </div>
+                    <div
+                        class='py-10 flex flex-col items-center gap-4 min-[400px]:grid min-[400px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'>
+                        <div
+                            class='p-4 border bg-white shadow-sm w-full h-[150px] flex items-center justify-center gap-4'>
+                            <div
+                                class='border  py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-secondary'>
+                                <i class="fa-solid fa-users text-white "></i>
+                            </div>
+                            <div class='text-gray-600 '>
+                                <span class='text-base font-bold'>95233</span>
+                                <h1 class='text-xs'>Candidate's Report Count</h1>
+                            </div>
+                        </div>
+                        <div
+                            class='p-4 border bg-white shadow-sm w-full h-[150px] flex items-center justify-center gap-4'>
+                            <div
+                                class='border  py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-secondary'>
+                                <i class="fa-solid fa-file-invoice text-white "></i>
+                            </div>
+                            <div class='text-gray-600 '>
+                                <span class='text-base font-bold'>5</span>
+                                <h1 class='text-xs'>Client's Report Count</h1>
+                            </div>
+                        </div>
+                        <div
+                            class='p-4 border bg-white shadow-sm  w-full h-[150px] flex items-center justify-center gap-4'>
+                            <div
+                                class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-secondary'>
+                                <i class="fa-solid fa-bars-progress text-white "></i>
+                            </div>
+                            <div class='text-gray-600'>
+                                <span class='text-base font-bold'>95233</span>
+                                <h1 class='text-xs'>Pie Graph for Progression Report</h1>
+                            </div>
+                        </div>
+                        <!-- <div
+                            class='p-4 border bg-white shadow-sm w-full h-[150px] flex items-center justify-center gap-4'>
+                            <div
+                                class='border  py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-secondary'>
+                                <GiTicket class='text-white' />
+                            </div>
+                            <div class='text-gray-600 '>
+                                <span class='text-base font-bold'>95233</span>
+                                <h1 class='text-xs'>Bar Graph for Candidate's & Client's Count</h1>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class='flex flex-col items-center  gap-4 xl:flex-row xl:items-start '>
+                        <div class='bg-white w-full xl:w-1/2 p-4 shadow-sm rounded-md'>
+                            <div class='text-gray-600 text-xs '>
+                                <h1 class='font-semibold'>Your Insights Will Appear Soon</h1>
+                            </div>
+                            <div class='py-4 flex flex-col gap-4 text-gray-600'>
+                                <div>
+                                    <canvas id="myChart"></canvas>
+                                </div>
+                                <div class='flex gap-4 flex-col md:flex-row'>
+                                    <div class='h-[150px] bg-slate-300 w-full items-center justify-center flex text-xs'>
+                                        <span>Lorem ipsum dolor sit amet.</span>
+                                    </div>
+                                    <div class='h-[150px] bg-slate-300 w-full items-center justify-center flex text-xs'>
+                                        <span>Lorem ipsum dolor sit amet.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='flex flex-col gap-4 lg:flex-row'>
+                            <div class='bg-white h-full p-4  xl:w-[280px] text-xs w-full shadow-sm px-4'>
+                                <div class='border-b-2 text-gray-600 pb-2'>
+                                    <span class='font-semibold'>Total Users By Country</span>
+                                </div>
+                                <div class='flex flex-col py-4 gap-2 text-gray-500'>
+                                    <div class='flex items-center justify-between '>
+                                        <div class=' flex items-center gap-2'>
+                                            <div
+                                                class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-secondary'>
+                                                <i class="fa-solid fa-flag text-white"></i>
+                                            </div>
+                                            <div class=''>
+                                                <span class='font-medium'>Phillippines</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class='text-xs font-bold'>6.4</span>
+                                        </div>
+                                    </div>
+                                    <div class='flex items-center justify-between '>
+                                        <div class=' flex items-center gap-2'>
+                                            <div
+                                                class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-secondary'>
+                                                <i class="fa-solid fa-flag text-white"></i>
+                                            </div>
+                                            <div class=''>
+                                                <span class='font-medium'>USA</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class='text-xs font-bold'>6.4</span>
+                                        </div>
+                                    </div>
+                                    <div class='flex items-center justify-between '>
+                                        <div class=' flex items-center gap-2'>
+                                            <div
+                                                class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-secondary'>
+                                                <i class="fa-solid fa-flag text-white"></i>
+                                            </div>
+                                            <div class=''>
+                                                <span class='font-medium'>Canada</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class='text-xs font-bold'>6.4</span>
+                                        </div>
+                                    </div>
+                                    <div class='flex items-center justify-between '>
+                                        <div class=' flex items-center gap-2'>
+                                            <div
+                                                class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-secondary'>
+                                                <i class="fa-solid fa-flag text-white"></i>
+                                            </div>
+                                            <div class=''>
+                                                <span class='font-medium'>Morocco</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class='text-xs font-bold'>5.2</span>
+                                        </div>
+                                    </div>
+                                    <div class='flex items-center justify-between '>
+                                        <div class=' flex items-center gap-2'>
+                                            <div
+                                                class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-secondary'>
+                                                <i class="fa-solid fa-flag text-white"></i>
+                                            </div>
+                                            <div class=''>
+                                                <span class='font-medium'>France</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class='text-xs font-bold'>5.2</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class='bg-white h-full p-4 xl:w-[280px] text-xs w-full shadow-sm px-4'>
+                                <div class='border-b-2 text-gray-600 pb-2'>
+                                    <span class='font-semibold'>Updates</span>
+                                </div>
+                                <div class='py-4 text-gray-600 text-justify'>
+                                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus enim harum
+                                        praesentium
+                                        quia ducimus maiores iste, sunt corporis, nemo, deleniti esse. Esse ad odit
+                                        magnam,
+                                        ratione vitae mollitia autem illo molestiae debitis temporibus inventore
+                                        incidunt
+                                        error
+                                        doloribus dolor libero rem doloremque perferendis ea magni velit est consectetur
+                                        amet
+                                        veritatis! Maxime?</h1>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <div id="list" class='fixed z-50 top-28 right-0  bg-white border shadowsm text-white  rounded-md p-2'>
+                    <div class='flex gap-2  items-center cursor-pointer '>
+                        <button class='px-1 rounded-full outline-none '>
+                            <i class="fa-solid fa-map-pin text-primaryRed " onclick="Bar(`1`)"></i>
+                        </button>
+                        <h1 class='hidden text-[9px] sm:flex cursor-pointer text-primaryBlack'>List of Positions
+                        </h1>
+                    </div>
+                </div>
+                <div id="sidebar"
+                    class=' fixed top-24 w-[300px]  h-[calc(90vh-2rem)] bg-white p-4 shadow-sm border  transition-all  duration-700 rounded-sm -right-80'>
+                    <div>
+                        <div class='flex items-center justify-between border-b-2 py-4 '>
+                            <div>
+                                <h1 class='text-sm text-gray-600  font-medium'>List of Open Positions</h1>
+                            </div>
+                            <button onclick="Bar(`2`)">
+                                <i class="fa-solid fa-xmark pl-12"></i>
+                            </button>
+                            <div class='cursor-pointer'>
+                                <!-- <AiOutlineClose size={18} /> -->
+                            </div>
+                        </div>
+                        <div class='p-6 h-[400px] w-full overflow-auto xl:h-[500px] '>
+                            <ol class='list-decimal text-xs flex flex-col gap-2 '>
+                                <li>John Doe</li>
+                                <li>Jeremiah Monfiel</li>
+                                <li>John Doe</li>
+                                <li>Jeremiah Monfiel</li>
+                                <li>John Doe</li>
+                                <li>Jeremiah Monfiel</li>
+                                <li>John Doe</li>
+                                <li>Jeremiah Monfiel</li>
+                                <li>John Doe</li>
+                                <li>Jeremiah Monfiel</li>
+                                <li>John Doe</li>
+                                <li>Jeremiah Monfiel</li>
+                                <li>John Doe</li>
+                                <li>Jeremiah Monfiel</li>
+                                <li>John Doe</li>
+                                <li>Jeremiah Monfiel</li>
+                                <li>John Doe</li>
+                                <li>Jeremiah Monfiel</li>
+                                <li>John Doe</li>
+                                <li>Jeremiah Monfiel</li>
+                                <li>John Doe</li>
+                                <li>Jeremiah Monfiel</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
         </main>
-
-        <div class='mx-4  p-4 pl-0 md:ml-[285px] data' id="sidenav0">
-            <div class=' font-medium text-gray-600 py-4'>
-                <h1 class='text-base'>Dashboard / Home</h1>
-                <span class='text-xs'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta,
-                    consectetur?</span>
-            </div>
-            <div
-                class='py-10 flex flex-col items-center gap-4 min-[400px]:grid min-[400px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-                <div class='p-4 border bg-white shadow-sm w-full h-[150px] flex items-center justify-center gap-4'>
-                    <div
-                        class='border  py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
-                        <AiFillFlag class='text-white' />
-                    </div>
-                    <div class='text-gray-600 '>
-                        <span class='text-base font-bold'>95233</span>
-                        <h1 class='text-xs'>Candidate's Report Count</h1>
-                    </div>
-                </div>
-                <div class='p-4 border bg-white shadow-sm w-full h-[150px] flex items-center justify-center gap-4'>
-                    <div
-                        class='border  py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
-                        <FaUsers class='text-white' />
-                    </div>
-                    <div class='text-gray-600 '>
-                        <span class='text-base font-bold'>5</span>
-                        <h1 class='text-xs'>Client's Report Count</h1>
-                    </div>
-                </div>
-                <div class='p-4 border bg-white shadow-sm  w-full h-[150px] flex items-center justify-center gap-4'>
-                    <div
-                        class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
-                        <MdArrowBackIosNew class='text-white' />
-                    </div>
-                    <div class='text-gray-600'>
-                        <span class='text-base font-bold'>95233</span>
-                        <h1 class='text-xs'>Pie Graph for Progression Report</h1>
-                    </div>
-                </div>
-                <div class='p-4 border bg-white shadow-sm w-full h-[150px] flex items-center justify-center gap-4'>
-                    <div
-                        class='border  py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
-                        <GiTicket class='text-white' />
-                    </div>
-                    <div class='text-gray-600 '>
-                        <span class='text-base font-bold'>95233</span>
-                        <h1 class='text-xs'>Bar Graph for Candidate's & Client's Count</h1>
-                    </div>
-                </div>
-            </div>
-            <div class='flex flex-col items-center  gap-4 xl:flex-row xl:items-start '>
-                <div class='bg-white w-full xl:w-1/2 p-4 shadow-sm rounded-md'>
-                    <div class='text-gray-600 text-xs '>
-                        <h1 class='font-semibold'>Your Insights Will Appear Soon</h1>
-                    </div>
-                    <div class='py-4 flex flex-col gap-4 text-gray-600'>
-                        <div>
-                            <canvas id="myChart"></canvas>
-                        </div>
-                        <div class='flex gap-4 flex-col md:flex-row'>
-                            <div class='h-[150px] bg-slate-300 w-full items-center justify-center flex text-xs'>
-                                <span>Lorem ipsum dolor sit amet.</span>
-                            </div>
-                            <div class='h-[150px] bg-slate-300 w-full items-center justify-center flex text-xs'>
-                                <span>Lorem ipsum dolor sit amet.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class='flex flex-col gap-4 lg:flex-row'>
-                    <div class='bg-white h-full p-4  xl:w-[280px] text-xs w-full shadow-sm px-4'>
-                        <div class='border-b-2 text-gray-600 pb-2'>
-                            <span class='font-semibold'>Total Users By Country</span>
-                        </div>
-                        <div class='flex flex-col py-4 gap-2 text-gray-500'>
-                            <div class='flex items-center justify-between '>
-                                <div class=' flex items-center gap-2'>
-                                    <div
-                                        class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
-                                        <FaFlag class='text-white' />
-                                    </div>
-                                    <div class=''>
-                                        <span class='font-medium'>Phillippines</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class='text-xs font-bold'>6.4</span>
-                                </div>
-                            </div>
-                            <div class='flex items-center justify-between '>
-                                <div class=' flex items-center gap-2'>
-                                    <div
-                                        class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
-                                        <FaFlagUsa class='text-white' />
-                                    </div>
-                                    <div class=''>
-                                        <span class='font-medium'>USA</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class='text-xs font-bold'>6.4</span>
-                                </div>
-                            </div>
-                            <div class='flex items-center justify-between '>
-                                <div class=' flex items-center gap-2'>
-                                    <div
-                                        class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
-                                        <FaRegUser class='text-white' />
-                                    </div>
-                                    <div class=''>
-                                        <span class='font-medium'>Canada</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class='text-xs font-bold'>6.4</span>
-                                </div>
-                            </div>
-                            <div class='flex items-center justify-between '>
-                                <div class=' flex items-center gap-2'>
-                                    <div
-                                        class='border py-4 w-[40px] h-[40px] flex items-center justify-center rounded-full bg-[#4caf4f]'>
-                                        <FaRegUser class='text-white' />
-                                    </div>
-                                    <div class=''>
-                                        <span class='font-medium'>Europe</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class='text-xs font-bold'>5.2</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class='bg-white h-full p-4 xl:w-[280px] text-xs w-full shadow-sm px-4'>
-                        <div class='border-b-2 text-gray-600 pb-2'>
-                            <span class='font-semibold'>Updates</span>
-                        </div>
-                        <div class='py-4 text-gray-600 text-justify'>
-                            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus enim harum
-                                praesentium
-                                quia ducimus maiores iste, sunt corporis, nemo, deleniti esse. Esse ad odit magnam,
-                                ratione vitae mollitia autem illo molestiae debitis temporibus inventore incidunt
-                                error
-                                doloribus dolor libero rem doloremque perferendis ea magni velit est consectetur
-                                amet
-                                veritatis! Maxime?</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-
 
 
 
@@ -292,6 +394,22 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
+        function Bar(data) {
+            if (data == 1) {
+                document.getElementById("sidebar").style.right = "0";
+                document.getElementById("list").style.visibility = "hidden";
+
+
+            }
+            else if (data == 2) {
+                document.getElementById("sidebar").style.right = "-350px";
+                document.getElementById("list").style.visibility = "visible";
+            }
+        }
+
+
+
+
         const ctx = document.getElementById('myChart');
 
         new Chart(ctx, {
@@ -300,22 +418,22 @@
                 labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
                     label: 'Candidates',
-                    data:[3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
+                    data: [3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
                     backgroundColor: "#C70039",
                     borderColor: "#fff",
                     borderWidth: 1
                 },
                 {
                     label: "Clients",
-                    data:[3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
-                    backgroundColor:  "#22092C",
+                    data: [3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
+                    backgroundColor: "#22092C",
                     borderColor: "#fff)",
                     borderWidth: 1
                 },
-            
-            ],
+
+                ],
             },
-            
+
             options: {
                 scales: {
                     y: {
