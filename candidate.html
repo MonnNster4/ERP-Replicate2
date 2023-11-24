@@ -6,6 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        primary: ['Red Hat Display', "sans-serif"],
+                        secondary: ['Roboto', 'sans-serif']
+                    },
+                    textColor: {
+                        primaryBlack: "#22092C",
+                        primaryRed: "#C70039",
+                        primaryGray: "#4B5563"
+                    },
+                    backgroundColor: {
+                        primary: "#22092C",
+                        secondary: "#C70039",
+                        tertiary: "#9D9D9D",
+                        hover: "#4caf4f",
+                        mainWhite: "#fff",
+                        screen: "#eceff180"
+                    },
+                    borderColor: {
+                        primaryBlack: "#22092C",
+                        primaryRed: "#C70039",
+                    }
+                },
+            }
+        }
+    </script>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
 
     <title>Document</title>
@@ -27,13 +60,12 @@
             </div>
             <div class='border-b-2 border-slate-300/40 py-12 '>
                 <div class='flex gap-4 justify-between px-4 items-center'>
-                    <div class='flex items-center font-bold -tracking-wider'>
-                        <h1 class='text-primaryBlack '>Group</h1>
-                        <h1 class='text-primaryRed '>NB</h1>
+                    <div class='flex items-center hover:scale-105 transition ease-in-out duration-500 cursor-pointer'>
+                        <img src="./img/groupnblogo.png" class='w-[95px] bg-white' alt='image' loading='lazy'></img>
                     </div>
                     <div class='flex flex-col text-primaryGray'>
                         <span class='text-primaryBlack text-xs font-medium '>Jeremiah Monfiel</span>
-                        <span class='font-semibold text-xs text-primaryGray  '>Position</span>
+                        <span class='font-semibold text-xs text-primaryRed   '>Position</span>
                     </div>
                 </div>
             </div>
@@ -44,48 +76,51 @@
                         <div
                             class=' content text-secondary border border-gray-300 hover:border-r-4 hover:border-r-main px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                             <div class='flex items-center gap-4'>
-                                <SiBaremetrics size={18} class='text-main' />
+                                <i class="fa-solid fa-chart-pie text-primaryRed text-sm"></i>
                                 <span>Dashboard</span>
                             </div>
                         </div>
                     </a>
                     <!-- <a href="#sidenav0"></a> -->
-                    <div
-                        class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
-                        <div class='flex items-center gap-4 text-secondary '>
-                            <SiBaremetrics size={18} class='text-main' />
-                            <span onClick="View(`1`)">Candidate's Report</span>
+                    <a href="./candidate.html">
+                        <div
+                            class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
+                            <div class='flex items-center gap-4 text-secondary '>
+                                <i class="fa-solid fa-users text-primaryRed text-sm"></i>
+                                <span>Candidate's Report</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <!-- <a href="#sidenav1"></a> -->
                     <a href="./client.html">
                         <div
                             class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                             <div class='flex items-center gap-4 text-secondary '>
-                                <SiBaremetrics size={18} class='text-main' />
+                                <i class="fa-solid fa-file-invoice text-primaryRed text-sm"></i>
                                 <span>Client's Report</span>
                             </div>
                         </div>
                     </a>
-                    <a href="#sidenav2"></a>
-                    <div
-                        class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
-                        <div class='flex items-center gap-4 text-secondary '>
-                            <SiBaremetrics size={18} class='text-main' />
-                            <span>Progression Report</span>
+                    <a href="./progression.html">
+                        <div
+                            class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
+                            <div class='flex items-center gap-4 text-secondary '>
+                                <i class="fa-solid fa-bars-progress text-primaryRed text-sm"></i>
+                                <span>Progression Report</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <div
                         class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                         <div class='flex items-center gap-4 text-secondary '>
-                            <SiBaremetrics size={18} class='text-main' />
+                            <i class="fa-solid fa-gears text-primaryRed text-sm"></i>
                             <span>Task Manager</span>
                         </div>
                     </div>
                     <div
                         class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                         <div class='flex items-center gap-4 text-secondary '>
-                            <SiBaremetrics size={18} class='text-main' />
+                            <i class="fa-solid fa-user-gear text-primaryRed text-sm"></i>
                             <span>User Management</span>
                         </div>
                     </div>
@@ -109,402 +144,368 @@
             </div>
         </div>
 
-        <div>
-            <div class='mx-4 p-4 h-[105vh] '>
+        <main class=' py-2 md:ml-[280px] bg-screen'>
+            <div class='sticky top-0'>
+                <div
+                    class='p-2 md:p-4 flex justify-between items-center shadow-md mx-4 z-20 bg-secondary  m-auto md:justify-end '>
+                    <div class='text-white flex md:hidden absolute top-4  '>
+                        <button>
+                            <!-- <FaBars /> -->
+                        </button>
 
-                <div class=' font-medium text-gray-600 py-4'>
-                    <h1 class='text-base'>Candidate Reports</h1>
-                    <span class='text-xs'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta,
-                        consectetur?</span>
+                    </div>
+
+                </div>
+                <div class='mx-4 p-4 md:p-2 bg-primary '>
                 </div>
 
-                <div class='flex flex-col gap-20 py-8 lg:gap-10'>
-                    <div class='flex flex-col gap-8 w-full lg:flex-row'>
-                        <div class="relative w-full  ">
-                            <select id="company"
-                                class="h-[30px] w-full text-xs border checked:bg-slate-200  focus:bg-none border-gray-300 outline-none ring-0  px-2">
-                                <option class='' defaultValue={"Select"}>Select</option>
-                                <option class='' defaultValue="US">Company</option>
-                                <option class='' defaultValue="CA">Company</option>
-                                <option class='' defaultValue="FR">Company</option>
-                                <option class='' defaultValue="DE">Company</option>
-                            </select>
-                            <label htmlFor="company"
-                                class="absolute text-xs -top-4 left-0 shadow-2xl bg-main  px-2 outline-none focus:outline-none bg-primary text-white">Company</label>
-                        </div>
-                        <div class="relative w-full  ">
-                            <select id="position"
-                                class=" h-[30px]   w-full text-xs border checked:bg-slate-200  focus:bg-none border-gray-300 outline-none ring-0  px-2">
-                                <option class='' defaultValue={"Select"}>Select</option>
-                                <option class='' defaultValue="US">Position</option>
-                                <option class='' defaultValue="CA">Position</option>
-                                <option class='' defaultValue="FR">Position</option>
-                                <option class='' defaultValue="DE">Position</option>
-                            </select>
-                            <label htmlFor="position"
-                                class="absolute text-xs -top-4 left-0 shadow-2xl bg-main  px-2 outline-none focus:outline-none bg-primary text-white">Position</label>
+
+
+
+                <div>
+                    <div class='mx-4 p-4 h-[105vh] '>
+
+                        <div class=' font-medium text-gray-600 py-4'>
+                            <h1 class='text-base'>Candidate Reports</h1>
+                            <span class='text-xs'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta,
+                                consectetur?</span>
                         </div>
 
-                        <div class="relative w-full">
-                            <input type="text" id="search"
-                                class=" h-[30px] block px-2.5 pb-1.5 pt-3 text-xs w-full border border-gray-300 outline-none"
-                                placeholder=" " />
-                            <label htmlFor='search'
-                                class="absolute text-xs -top-4  shadow-2xl left-0   bg-primary text-white px-2  rounded-sm ">Search
-                                Candidate</label>
+                        <div class='flex flex-col gap-20 py-8 lg:gap-10'>
+                            <div class='flex flex-col gap-8 w-full lg:flex-row'>
+                                <div class="relative w-full  ">
+                                    <select id="company"
+                                        class="h-[30px] w-full text-xs border checked:bg-slate-200  focus:bg-none border-gray-300 outline-none ring-0  px-2">
+                                        <option class='' defaultValue={"Select"}>Select</option>
+                                        <option class='' defaultValue="US">Company</option>
+                                        <option class='' defaultValue="CA">Company</option>
+                                        <option class='' defaultValue="FR">Company</option>
+                                        <option class='' defaultValue="DE">Company</option>
+                                    </select>
+                                    <label htmlFor="company"
+                                        class="absolute text-xs -top-4 left-0 shadow-2xl bg-main  px-2 outline-none focus:outline-none bg-primary text-white">Company</label>
+                                </div>
+                                <div class="relative w-full  ">
+                                    <select id="position"
+                                        class=" h-[30px]   w-full text-xs border checked:bg-slate-200  focus:bg-none border-gray-300 outline-none ring-0  px-2">
+                                        <option class='' defaultValue={"Select"}>Select</option>
+                                        <option class='' defaultValue="US">Position</option>
+                                        <option class='' defaultValue="CA">Position</option>
+                                        <option class='' defaultValue="FR">Position</option>
+                                        <option class='' defaultValue="DE">Position</option>
+                                    </select>
+                                    <label htmlFor="position"
+                                        class="absolute text-xs -top-4 left-0 shadow-2xl bg-main  px-2 outline-none focus:outline-none bg-primary text-white">Position</label>
+                                </div>
+
+                                <div class="relative w-full">
+                                    <input type="text" id="search"
+                                        class=" h-[30px] block px-2.5 pb-1.5 pt-3 text-xs w-full border border-gray-300 outline-none"
+                                        placeholder=" " />
+                                    <label htmlFor='search'
+                                        class="absolute text-xs -top-4  shadow-2xl left-0   bg-primary text-white px-2  rounded-sm ">Search
+                                        Candidate</label>
+                                </div>
+
+
+
+                            </div>
                         </div>
 
+                        <div class="p-20 overflow-x-auto h-[50vh] md:h-[60vh] px-0 pt-0 pb-2 bg-white shadow-sm ">
+                            <table
+                                class="min-w-[800px] xl:w-full table-auto text-sm text-left rtl:text-right text-gray-500 border     ">
+                                <thead class="text-xs text-gray-600 uppercase   ">
+                                    <tr class='sticky top-0 bg-white/50 shadow-sm backdrop-blur-sm'>
+                                        <th scope="col" class="px-6 pr-20 md:pr-6  py-3 text-left  ">
+                                            Candidate
+                                        </th>
+                                        <th scope="col" class="pl-6 py-3 text-left">
+                                            Company
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left">
+                                            Position
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left">
+                                            Recruiter
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left">
+                                            Admin
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+
+
+
+
+
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
 
 
                     </div>
-                </div>
-
-                <div class="p-20 overflow-x-auto h-[50vh] md:h-[60vh] px-0 pt-0 pb-2 bg-white shadow-sm ">
-                    <table
-                        class="min-w-[800px] xl:w-full table-auto text-sm text-left rtl:text-right text-gray-500 border     ">
-                        <thead class="text-xs text-gray-600 uppercase   ">
-                            <tr class='sticky top-0 bg-white/50 shadow-sm backdrop-blur-sm'>
-                                <th scope="col" class="px-6 pr-20 md:pr-6  py-3 text-left  ">
-                                    Candidate
-                                </th>
-                                <th scope="col" class="pl-6 py-3 text-left">
-                                    Company
-                                </th>
-                                <th scope="col" class="px-6 py-3 text-left">
-                                    Position
-                                </th>
-                                <th scope="col" class="px-6 py-3 text-left">
-                                    Recruiter
-                                </th>
-                                <th scope="col" class="px-6 py-3 text-left">
-                                    Admin
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b ">
-                                <td scope="row" class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
-                                    Candidate
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Company
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Position
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Recruiter
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Admin
-                                </td>
-                            </tr>
-                            <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
-                                <td scope="row" class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
-                                    Candidate
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Company
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Position
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Recruiter
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Admin
-                                </td>
-                            </tr>
-                            <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
-                                <td scope="row" class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
-                                    Candidate
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Company
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Position
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Recruiter
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Admin
-                                </td>
-                            </tr>
-                            <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
-                                <td scope="row" class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
-                                    Candidate
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Company
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Position
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Recruiter
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Admin
-                                </td>
-                            </tr>
-                            <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
-                                <td scope="row" class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
-                                    Candidate
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Company
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Position
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Recruiter
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Admin
-                                </td>
-                            </tr>
-                            <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
-                                <td scope="row" class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
-                                    Candidate
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Company
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Position
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Recruiter
-                                </td>
-                                {/* <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td> */}
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Admin
-                                </td>
-                            </tr>
-                            <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
-                                <td scope="row" class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
-                                    Candidate
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Company
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Position
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Recruiter
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Admin
-                                </td>
-                            </tr>
-                            <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
-                                <td scope="row" class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
-                                    Candidate
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Company
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Position
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Recruiter
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Admin
-                                </td>
-                            </tr>
-                            <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
-                                <td scope="row" class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
-                                    Candidate
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Company
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Position
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Recruiter
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Admin
-                                </td>
-                            </tr>
-                            <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
-                                <td scope="row" class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
-                                    Candidate
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Company
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Position
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Recruiter
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap">
-                                    <a href="#"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                </td>
-                                <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                    Admin
-                                </td>
-                            </tr>
 
 
-
-
-
-
-                        </tbody>
-
-                    </table>
 
                 </div>
 
 
-            </div>
-
-
-
-        </div>
-
-
-
+        </main>
     </div>
-    </div>
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script>
+        function Bar(data) {
+            if (data == 1) {
+                document.getElementById("sidebar").style.right = "0";
+                document.getElementById("list").style.visibility = "hidden";
+
+
+            }
+            else if (data == 2) {
+                document.getElementById("sidebar").style.right = "-350px";
+                document.getElementById("list").style.visibility = "visible";
+            }
+        }
 
 
 
 
+        const ctx = document.getElementById('myChart');
 
-        // hide()
-        // $('#sidenav0').show()
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'Candidates',
+                    data: [3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
+                    backgroundColor: "#C70039",
+                    borderColor: "#fff",
+                    borderWidth: 1
+                },
+                {
+                    label: "Clients",
+                    data: [3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
+                    backgroundColor: "#22092C",
+                    borderColor: "#fff)",
+                    borderWidth: 1
+                },
 
-        // function View() {
-        //     var data = localStorage.getItem("view")
+                ],
+            },
 
-        //     if (data == null || data == "") {
-        //         localStorage.setItem("view", "data")
-        //         $('#navbarSupportedContent1').css('display', 'block')
-        //     } else {
-        //         localStorage.removeItem("view")
-        //         $('#navbarSupportedContent1').css('display', 'none')
-        //     }
-
-        // }
-
-
-
-        // function hide() {
-
-        //     $("#sidenav0").hide()
-
-        //     $("#sidenav1").hide()
-
-        //     $("#sidenav2").hide()
-
-        //     $("#sidenav3").hide()
-
-        //     $("#sidenav4").hide()
-
-        //     $("#sidenav5").hide()
-
-        //     $("#sidenav6").hide()
-
-        //     $("#sidenav7").hide()
-
-        //     $('#dropdown0').hide()
-
-        // }
-
-
-
-
-        // function View(data) {
-        //     if (data == 0) {
-        //         $("#searchbar").show();
-        //         $("#sidenav0").show();
-        //         $("#sidenav1").hide();
-        //         $("#sidenav2").hide();
-        //         $("#dropdownDefault").hide();
-
-        //     }
-
-        //     else if (data == 1) {
-        //         $("#sidenav1").show();
-        //         $("#sidenav0").hide();
-        //         $("#sidenav2").hide();
-        //         $("#dropdownDefault").show();
-        //         $("#dropdownDefault2").hide();
-
-
-        //     }
-
-        //     else if (data == 2) {
-        //         $("#sidenav2").show();
-        //         $("#sidenav0").hide();
-        //         $("#sidenav1").hide();
-        //         $("#dropdownDefault2").show();
-        //         $("#dropdownDefault").hide();
-
-
-        //     }
-
-        //     else if (data == 10) {
-        //         $("#dropdown0").show();
-
-        //     }
-        // }
-
-
-
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
     </script>
+
 
 
 </body>

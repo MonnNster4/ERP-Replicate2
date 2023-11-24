@@ -102,13 +102,13 @@
                         </div>
                     </a>
                     <a href="./progression.html">
-                        <div
-                            class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
-                            <div class='flex items-center gap-4 text-secondary '>
-                                <i class="fa-solid fa-bars-progress text-primaryRed text-sm"></i>
-                                <span>Progression Report</span>
-                            </div>
+                    <div
+                        class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
+                        <div class='flex items-center gap-4 text-secondary '>
+                            <i class="fa-solid fa-bars-progress text-primaryRed text-sm"></i>
+                            <span>Progression Report</span>
                         </div>
+                    </div>
                     </a>
                     <div
                         class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
@@ -211,6 +211,15 @@
                                         Status</label>
                                 </div>
 
+                                <div class="relative w-full">
+                                    <input type="text" id="search"
+                                        class=" h-[30px] block px-2.5 pb-1.5 pt-3 text-xs w-full border border-gray-300 outline-none"
+                                        placeholder=" " />
+                                    <label htmlFor='search'
+                                        class="absolute text-xs -top-4  shadow-2xl left-0   bg-primary text-white px-2  rounded-sm ">Search
+                                        Candidate</label>
+                                </div>
+
 
                             </div>
                         </div>
@@ -227,9 +236,14 @@
                                             Company
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left">
+                                            Position
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left">
+                                            Document Status
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left">
                                             LMIA Status
                                         </th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -241,11 +255,15 @@
                                         <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
                                             Company
                                         </td>
-
                                         <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                            Approved
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
                                         </td>
 
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
                                         </td>
                                     </tr>
                                     <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
@@ -257,9 +275,15 @@
                                             Company
                                         </td>
                                         <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                            Pending
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
                                         </td>
 
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
                                     </tr>
                                     <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
                                         <td scope="row"
@@ -270,9 +294,15 @@
                                             Company
                                         </td>
                                         <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
-                                            Pending
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
                                         </td>
 
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
                                     </tr>
 
                                 </tbody>
