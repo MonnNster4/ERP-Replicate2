@@ -170,7 +170,7 @@
                     <div class='mx-4 p-4 h-[105vh] '>
 
                         <div class=' font-medium text-gray-600 py-4'>
-                            <h1 class='text-base'>Client Reports</h1>
+                            <h1 class='text-base'>Candidate Reports</h1>
                             <span class='text-xs'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta,
                                 consectetur?</span>
                         </div>
@@ -187,7 +187,7 @@
                                         <option class='' defaultValue="DE">Company</option>
                                     </select>
                                     <label htmlFor="company"
-                                        class="absolute text-xs -top-4 left-0 shadow-2xl bg-main  px-2 outline-none focus:outline-none bg-primary text-white">Company</label>
+                                        class="absolute text-xs -top-4 left-0 shadow-2xl bg-main  px-2 outline-none focus:outline-none bg-primary text-white">Department</label>
                                 </div>
                                 <div class="relative w-full  ">
                                     <select id="position"
@@ -198,21 +198,6 @@
                                         <option class='' defaultValue="FR">Position</option>
                                         <option class='' defaultValue="DE">Position</option>
                                     </select>
-                                    <label htmlFor="position"
-                                        class="absolute text-xs -top-4 left-0 shadow-2xl bg-main  px-2 outline-none focus:outline-none bg-primary text-white">Position</label>
-                                </div>
-
-                                <div class="relative w-full  ">
-                                    <select id="LMIA"
-                                        class=" h-[30px]   w-full text-xs border checked:bg-slate-200  focus:bg-none border-gray-300 outline-none ring-0  px-2">
-                                        <option class='' defaultValue={"Select"}>Select</option>
-                                        <option class='' defaultValue="pending">Pending</option>
-                                        <option class='' defaultValue="approved">Approved</option>
-
-                                    </select>
-                                    <label htmlFor="LMIA"
-                                        class="absolute text-xs -top-4 left-0 shadow-2xl bg-main  px-2 outline-none focus:outline-none bg-primary text-white">LMIA
-                                        Status</label>
                                 </div>
 
                                 <div class="relative w-full">
@@ -220,9 +205,10 @@
                                         class=" h-[30px] block px-2.5 pb-1.5 pt-3 text-xs w-full border border-gray-300 outline-none"
                                         placeholder=" " />
                                     <label htmlFor='search'
-                                        class="absolute text-xs -top-4  shadow-2xl left-0   bg-primary text-white px-2  rounded-sm ">Search
-                                        Candidate</label>
+                                        class="absolute text-xs -top-4  shadow-2xl left-0   bg-primary text-white px-2  rounded-sm ">Serch
+                                        Name</label>
                                 </div>
+
 
 
                             </div>
@@ -234,19 +220,22 @@
                                 <thead class="text-xs text-gray-600 uppercase   ">
                                     <tr class='sticky top-0 bg-white/50 shadow-sm backdrop-blur-sm'>
                                         <th scope="col" class="px-6 pr-20 md:pr-6  py-3 text-left  ">
-                                            Candidate
+                                            Department
                                         </th>
                                         <th scope="col" class="pl-6 py-3 text-left">
-                                            Company
+                                            Name
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left">
-                                            Position
+                                            Username
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left">
-                                            Document Status
+                                            Email
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left">
-                                            LMIA Status
+                                            Depart. Head
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left">
+                                            Action
                                         </th>
                                     </tr>
                                 </thead>
@@ -266,6 +255,54 @@
                                             Recruiter
                                         </td>
 
+                                        <td class="px-4 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            <select id="position"
+                                                class=" h-[15px] w-16 text-[10px] border checked:bg-slate-200  focus:bg-none border-gray-300 outline-none ring-0  px-2">
+                                                <option class='' defaultValue={"Select"}>Select</option>
+                                                <option class='' defaultValue="US">Position</option>
+                                                <option class='' defaultValue="CA">Position</option>
+                                                <option class='' defaultValue="FR">Position</option>
+                                                <option class='' defaultValue="DE">Position</option>
+                                            </select>
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Action
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
                                         <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
                                             Admin
                                         </td>
@@ -308,6 +345,106 @@
                                             Admin
                                         </td>
                                     </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+                                    <tr class="odd:bg-white  even:bg-slate-50 even:dark:bg-gray-800 border-b  ">
+                                        <td scope="row"
+                                            class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap  text-xs">
+                                            Candidate
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Company
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Position
+                                        </td>
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Recruiter
+                                        </td>
+
+                                        <td class="px-6 py-4 font-normal text-gray-600 whitespace-nowrap text-xs">
+                                            Admin
+                                        </td>
+                                    </tr>
+
+
+
+
+
 
                                 </tbody>
 
