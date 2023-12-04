@@ -11,6 +11,7 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
     <script>
         tailwind.config = {
             theme: {
@@ -40,7 +41,7 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
+
 
     <title>Document</title>
 
@@ -53,7 +54,83 @@
 </style>
 
 <body>
-    <div class='font-primary  md:p-4'>
+
+    
+
+<!-- Modal toggle -->
+
+  
+  <!-- Main modal -->
+
+  
+    <div id="chartModal" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-hidden overflow-x-hidden fixed bottom-0 top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-md max-h-full ml-[500px]">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                        Sign in to our platform
+                    </h3>
+                    <button type="button" onclick="Close();"
+                        class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-hide="authentication-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="p-4 md:p-5">
+                    <form class="space-y-4" action="#">
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                                email</label>
+                            <input type="email" name="email" id="email"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                placeholder="name@company.com" required>
+                        </div>
+                        <div>
+                            <label for="password"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                                password</label>
+                            <input type="password" name="password" id="password" placeholder="••••••••"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                required>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="remember" type="checkbox" value=""
+                                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                                        required>
+                                </div>
+                                <label for="remember"
+                                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
+                                    me</label>
+                            </div>
+                            <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost
+                                Password?</a>
+                        </div>
+                        <button type="submit"
+                            class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login
+                            to your account</button>
+                        <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                            Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create
+                                account</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="full" class='font-primary  md:p-4'>
         <div
             class=' w-[17rem] -left-80  md:top-4  md:left-4  bg-white border border-slate-300  fixed  h-[calc(100vh-2rem)] rounded-md z-50  md:flex md:flex-col transition-all  duration-700'>
             <div class='flex p-2 justify-end md:hidden '>
@@ -233,21 +310,26 @@
                             <div class='text-gray-600 text-xs '>
                                 <h1 class='font-semibold'>Your Insights Will Appear Soon</h1>
                             </div>
-                            <div class='py-4 flex flex-col gap-8 text-gray-600'>
-                                <div>
+                            <div class='py-4 flex flex-col gap-6 text-gray-600'>
+                                <div style="">
                                     <canvas id="myChart"></canvas>
                                 </div>
-                                <div class="flex flex-row gap-12 lg:flex-row width-50">
+                                <div class="flex flex-row gap-0 lg:flex-row ">
                                     <div>
-                                        <canvas id="myChart1" style="max-width:150px"></canvas>
+                                        <div style="max-width:220px">
+                                            <canvas id="myChart1"></canvas>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="max-width:220px">
+                                            <canvas id="myChart2"></canvas>
+                                        </div>
                                     </div>
                                     <!-- <div
                                         class="h-[300px] bg-white border  w-full lg:h-[250px] items-center justify-center flex text-xs">
                                         <Doughnutchart />
                                     </div> -->
-                                    <div>
-                                        <canvas id="myChart2" style="width:100%;max-width:150px"></canvas>
-                                    </div>
+
                                     <!-- <div
                                         class="h-[300px] bg-white border  w-full lg:h-[250px] items-center justify-center flex text-xs">
                                         <Doughnutchart_two />
@@ -257,7 +339,7 @@
                             </div>
                         </div>
                         <div class='flex flex-col gap-4 lg:flex-row'>
-                            <div class='bg-white h-full p-4  xl:w-[280px] text-xs w-full shadow-sm px-4'>
+                            <div class='bg-white h-full p-4  xl:w-[260px] text-xs w-full shadow-sm px-4'>
                                 <div class='border-b-2 text-gray-600 pb-2'>
                                     <span class='font-semibold'>Total Users By Country</span>
                                 </div>
@@ -269,11 +351,11 @@
                                                 <i class="fa-solid fa-flag text-white"></i>
                                             </div>
                                             <div class=''>
-                                                <span class='font-medium'>Phillippines</span>
+                                                <span class='font-medium'>Exit Papers and Resignation</span>
                                             </div>
                                         </div>
                                         <div>
-                                            <span class='text-xs font-bold'>6.4</span>
+                                            <span class='text-xs font-bold'>2</span>
                                         </div>
                                     </div>
                                     <div class='flex items-center justify-between '>
@@ -283,11 +365,11 @@
                                                 <i class="fa-solid fa-flag text-white"></i>
                                             </div>
                                             <div class=''>
-                                                <span class='font-medium'>USA</span>
+                                                <span class='font-medium'>For Accomodation</span>
                                             </div>
                                         </div>
                                         <div>
-                                            <span class='text-xs font-bold'>6.4</span>
+                                            <span class='text-xs font-bold'>4</span>
                                         </div>
                                     </div>
                                     <div class='flex items-center justify-between '>
@@ -297,11 +379,11 @@
                                                 <i class="fa-solid fa-flag text-white"></i>
                                             </div>
                                             <div class=''>
-                                                <span class='font-medium'>Canada</span>
+                                                <span class='font-medium'>For Flight Booking</span>
                                             </div>
                                         </div>
                                         <div>
-                                            <span class='text-xs font-bold'>6.4</span>
+                                            <span class='text-xs font-bold'>4</span>
                                         </div>
                                     </div>
                                     <div class='flex items-center justify-between '>
@@ -311,11 +393,11 @@
                                                 <i class="fa-solid fa-flag text-white"></i>
                                             </div>
                                             <div class=''>
-                                                <span class='font-medium'>Morocco</span>
+                                                <span class='font-medium'>Ready to Leave</span>
                                             </div>
                                         </div>
                                         <div>
-                                            <span class='text-xs font-bold'>5.2</span>
+                                            <span class='text-xs font-bold'>5</span>
                                         </div>
                                     </div>
                                     <div class='flex items-center justify-between '>
@@ -325,19 +407,19 @@
                                                 <i class="fa-solid fa-flag text-white"></i>
                                             </div>
                                             <div class=''>
-                                                <span class='font-medium'>France</span>
+                                                <span class='font-medium'>Already in Canada</span>
                                             </div>
                                         </div>
                                         <div>
-                                            <span class='text-xs font-bold'>5.2</span>
+                                            <span class='text-xs font-bold'>2</span>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
-                            <div class='bg-white h-full p-4 xl:w-[280px] text-xs w-full shadow-sm px-4'>
+                            <div class='bg-white h-full p-4 xl:w-[240px] text-xs w-full shadow-sm px-4'>
                                 <div class='border-b-2 text-gray-600 pb-2'>
-                                    <span class='font-semibold'>Updates</span>
+                                    <span class='font-semibold'>Software Update</span>
                                 </div>
                                 <div class='py-4 text-gray-600 text-justify'>
                                     <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus enim harum
@@ -396,7 +478,7 @@
                         <div class="pl-3 ">
                             <ol class="list-decimal text-xs flex flex-col gap-4 py-4 overflow-y-auto  ">
 
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -404,7 +486,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -412,7 +494,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -420,7 +502,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -428,7 +510,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -436,7 +518,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -444,7 +526,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -452,7 +534,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -460,7 +542,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -468,7 +550,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -476,7 +558,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -484,7 +566,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -492,7 +574,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -500,7 +582,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -508,7 +590,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -516,7 +598,7 @@
                                         <span class="">10</span>
                                     </div>
                                 </div>
-                                <div class="flex justify-between px-4" >
+                                <div class="flex justify-between px-4">
                                     <li class="text-xs">TRANSDEV </li>
                                     <div class="flex gap-10 pr-4">
                                         <span class="w-9 pl-[7px] mx-auto">Canada</span>
@@ -526,11 +608,85 @@
                                 </div>
 
                             </ol>
-                            
+
                         </div>
                     </div>
                 </div>
         </main>
+    </div>
+
+    <div id="crudModal" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-md max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        Create New Product
+                    </h3>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-toggle="crud-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <form class="p-4 md:p-5">
+                    <div class="grid gap-4 mb-4 grid-cols-2">
+                        <div class="col-span-2">
+                            <label for="name"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                            <input type="text" name="name" id="name"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Type product name" required="">
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <label for="price"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                            <input type="number" name="price" id="price"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="$2999" required="">
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <label for="category"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+                            <select id="category"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                <option selected="">Select category</option>
+                                <option value="TV">TV/Monitors</option>
+                                <option value="PC">PC</option>
+                                <option value="GA">Gaming/Console</option>
+                                <option value="PH">Phones</option>
+                            </select>
+                        </div>
+                        <div class="col-span-2">
+                            <label for="description"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product
+                                Description</label>
+                            <textarea id="description" rows="4"
+                                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Write product description here"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Add new product
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
 
 
@@ -538,7 +694,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
     <script>
         function Bar(data) {
@@ -557,93 +713,196 @@
 
 
 
-        const ctx = document.getElementById('myChart');
 
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: 'Candidates',
-                    data: [3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
-                    backgroundColor: "#C70039",
-                    borderColor: "#fff",
-                    borderWidth: 1
-                },
-                {
-                    label: "Clients",
-                    data: [3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
-                    backgroundColor: "#22092C",
-                    borderColor: "#fff)",
-                    borderWidth: 1
-                },
 
-                ],
+
+
+
+
+        // const ctx = document.getElementById('myChart');
+
+        // new Chart(ctx, {
+        //     type: 'bar',
+        //     data: {
+        //         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        //         datasets: [{
+        //             label: 'Candidates',
+        //             data: [3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
+        //             backgroundColor: "#C70039",
+        //             borderColor: "#fff",
+        //             borderWidth: 1
+        //         },
+        //         {
+        //             label: "Clients",
+        //             data: [3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
+        //             backgroundColor: "#22092C",
+        //             borderColor: "#fff)",
+        //             borderWidth: 1
+        //         },
+
+        //         ],
+        //     },
+
+        // });
+
+        var data3 = {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: 'Candidates',
+                data: [3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
+                backgroundColor: "#C70039",
+                borderColor: "#fff",
+                borderWidth: 1,
+
+            },
+            {
+                label: "Clients",
+                data: [3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
+                backgroundColor: "#22092C",
+                borderColor: "#fff)",
+                borderWidth: 1
             },
 
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+
+
+            ],
+
+
+
+        };
+        $(document).ready(
+            function () {
+                var canvas = document.getElementById("myChart");
+                var ctx = canvas.getContext("2d");
+                var myNewC3 = new Chart(ctx, {
+                    type: 'bar',
+                    data: data3
+                });
+
+                canvas.onclick = function (evt) {
+                    var activePoints = myNewC3.getElementsAtEvent(evt);
+                    if (activePoints[0]) {
+                        var chartData = activePoints[0]['_chart'].config.data;
+                        var idx = activePoints[0]['_index'];
+                      
+
+
+                        $('#chartModal').show()
+                        document.getElementById("full").style.opacity = "0.4";
+
+
                     }
-                }
+                };
             }
-        });
+        );
 
 
     </script>
+
     <script>
-        const xValues = ["LMIA Approved", "LMIA Pending",];
 
-        const barColors = [
-            "#b91d47",
-            "#00aba9",
-            "#2b5797",
-            "#e8c3b9",
-            "#1e7145"
-        ];
+        var data = {
+            datasets: [{
+                data: [300, 50,],
+                backgroundColor: [
+                    "#22092C",
+                    "#C70039",
+                ]
+            }],
+            labels: [
+                "LMIA Approved",
+                "LMIA Pending",
 
-        new Chart("myChart1", {
-            type: "pie",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    backgroundColor: ["#22092C", "#C70039"],
-                    borderColor: "#fff",
-                    data: [2, 5],
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: "World Wide Wine Production 2018"
-                }
+            ]
+        };
+
+        $(document).ready(
+            function () {
+                var canvas = document.getElementById("myChart1");
+                var ctx = canvas.getContext("2d");
+                var myNewChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: data
+                });
+
+                canvas.onclick = function (evt) {
+                    var activePoints = myNewChart.getElementsAtEvent(evt);
+                    if (activePoints[0]) {
+                        var chartData = activePoints[0]['_chart'].config.data;
+                        var idx = activePoints[0]['_index'];
+
+                        var label = chartData.labels[idx];
+                        var value = chartData.datasets[0].data[idx];
+
+                        var url = "http://example.com/?label=" + label + "&value=" + value;
+
+                        $('#chartModal').show()
+                        document.getElementById("full").style.opacity = "0.4";
+                    }
+                };
             }
-        });
+        );
 
 
-        const zValues = ["Completed", "Not Completed",];
 
 
-        new Chart("myChart2", {
-            type: "pie",
-            data: {
-                labels: zValues,
-                datasets: [{
-                    backgroundColor: ["#22092C", "#C70039"],
-                    borderColor: "#fff",
-                    data: [2, 5],
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: "World Wide Wine Production 2018"
-                }
+        //*Chart2
+
+        var data2 = {
+            datasets: [{
+                data: [300, 50,],
+                backgroundColor: [
+                    "#22092C",
+                    "#C70039",
+                ]
+            }],
+            labels: [
+                "Complete",
+                "Incomplete",
+
+            ]
+        };
+
+        $(document).ready(
+            function () {
+                var canvas = document.getElementById("myChart2");
+                var ctx = canvas.getContext("2d");
+                var myNewC = new Chart(ctx, {
+                    type: 'pie',
+                    data: data2
+                });
+                canvas.onclick = function (evt) {
+                    var activePoints = myNewC.getElementsAtEvent(evt);
+                    if (activePoints[0]) {
+                        var chartData = activePoints[0]['_chart'].config.data;
+                        var idx = activePoints[0]['_index'];
+
+                        var label = chartData.labels[idx];
+                        var value = chartData.datasets[0].data[idx];
+
+                        var url = label + value;
+
+                        $('#chartModal').show()
+                        document.getElementById("full").style.opacity = "0.4";
+
+                    }
+                };
             }
-        });
+        );
+
+
+        function Close() {
+            $('#chartModal').hide()
+            document.getElementById("full").style.opacity = "1";
+
+
+        }
+
+
+
+
+
     </script>
-
 
 
 
