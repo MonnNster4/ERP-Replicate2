@@ -55,14 +55,14 @@
 
 <body>
 
-    
 
-<!-- Modal toggle -->
 
-  
-  <!-- Main modal -->
+    <!-- Modal toggle -->
 
-  
+
+    <!-- Main modal -->
+
+
     <div id="chartModal" tabindex="-1" aria-hidden="true"
         class="hidden overflow-y-hidden overflow-x-hidden fixed bottom-0 top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full ml-[500px]">
@@ -306,38 +306,35 @@
                         </div> -->
                     </div>
                     <div class='flex flex-col items-center  gap-4 xl:flex-row xl:items-start '>
-                        <div class='bg-white h-[28rem] w-full xl:w-1/2 p-4 shadow-sm rounded-md'>
-                            <div class='text-gray-600 text-xs '>
-                                <h1 class='font-semibold'>Your Insights Will Appear Soon</h1>
+                        <div class="bg-white w-full xl:w-1/2 p-4 shadow-sm rounded-md">
+                            <div class="text-gray-600 text-xs ">
+                                <h1 class="font-semibold">Your Insights Will Appear Soon</h1>
                             </div>
-                            <div class='py-4 flex flex-col gap-6 text-gray-600'>
-                                <div style="">
+                            <div class="py-4 flex flex-col gap-4 text-gray-600">
+                                <div
+                                    class="bg-white  border-dotted border border-b w-full flex items-center justify-center flex-col h-[300px]">
                                     <canvas id="myChart"></canvas>
                                 </div>
-                                <div class="flex flex-row gap-0 lg:flex-row ">
-                                    <div>
-                                        <div style="max-width:220px">
-                                            <canvas id="myChart1"></canvas>
-                                        </div>
+                                <div class="flex gap-4 flex-col lg:flex-row">
+                                    <div
+                                        class=" bg-white border    lg:h-[250px] items-center justify-center flex text-xs">
+                                        <canvas style=" height: 228px; display: block; width: 200px;" id="myChart1"></canvas>
                                     </div>
-                                    <div>
-                                        <div style="max-width:220px">
-                                            <canvas id="myChart2"></canvas>
-                                        </div>
-                                    </div>
-                                    <!-- <div
-                                        class="h-[300px] bg-white border  w-full lg:h-[250px] items-center justify-center flex text-xs">
-                                        <Doughnutchart />
-                                    </div> -->
+                                    <div
+                                        class="h-[300px] bg-white border   lg:h-[250px] items-center justify-center flex text-xs">
 
-                                    <!-- <div
-                                        class="h-[300px] bg-white border  w-full lg:h-[250px] items-center justify-center flex text-xs">
-                                        <Doughnutchart_two />
-                                    </div> -->
+                                        <canvas  style=" height: 228px; display: block; width: 200px;"  id="myChart2"></canvas>
+                                    </div> 
                                 </div>
-
                             </div>
                         </div>
+
+                        <!-- <canvas id="myChart"></canvas>
+
+                        <canvas id="myChart1"></canvas>
+
+                        <canvas id="myChart2"></canvas> -->
+
                         <div class='flex flex-col gap-4 lg:flex-row'>
                             <div class='bg-white h-full p-4  xl:w-[260px] text-xs w-full shadow-sm px-4'>
                                 <div class='border-b-2 text-gray-600 pb-2'>
@@ -746,7 +743,7 @@
         // });
 
         var data3 = {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'August', 'Sept', 'Oct', 'Nov', 'Dec'],
             datasets: [{
                 label: 'Candidates',
                 data: [3, 10, 5, 2, 20, 20, 35, 6, 8, 4, 7, 2],
@@ -784,7 +781,7 @@
                     if (activePoints[0]) {
                         var chartData = activePoints[0]['_chart'].config.data;
                         var idx = activePoints[0]['_index'];
-                      
+
 
 
                         $('#chartModal').show()
