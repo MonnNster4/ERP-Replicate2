@@ -51,6 +51,16 @@
     /* .dropdownDefault {
         visibility: hidden;
     } */
+
+    .dropdown-content {
+        height: 0;
+        opacity: 0.0;
+        font-size: 0px;
+
+
+
+
+    }
 </style>
 
 <body>
@@ -197,7 +207,34 @@
                             </div>
                         </div>
                     </a>
-                    <a href="./lmia.html">
+                    <a>
+                        <div onclick="myFunction()"
+                            class='dropbtn text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
+                            <div class='flex items-center gap-4 text-secondary '>
+                                <i class="fa-solid fa-money-check text-primaryRed text-sm"></i>
+                                <span>Invoice</span>
+                            </div>
+                        </div>
+                        <div id="invoice-child"
+                            class=' dropdown-content   flex mb-0 bg-white text-black border transition-all ease-in-out duration-500 flex-col w-11/12 m-auto '>
+                            <div
+                                class='pt-3 gap-4 h-[35px] px-8 items-center hover:border-r-4  hover:border-r-primaryBlack  '>
+                                <!-- <i class="fa-solid fa-file-invoice-dollar primary-gray"></i>  &nbsp; -->
+                                <span class=" text-primaryRed">Invoice Report </span>
+                            </div>
+                            <div
+                                class='pt-3 gap-4 h-[35px] px-8 items-center hover:border-r-4  hover:border-r-primaryBlack  '>
+                                <!-- <i class="fa-solid fa-file-invoice-dollar primary-gray"></i> &nbsp; -->
+                                <span class=" text-primaryRed ">LMIA Payment </span>
+                            </div>
+                            <div
+                                class='pt-3 gap-4 h-[35px] px-8 items-center hover:border-r-4  hover:border-r-primaryBlack   '>
+                                <!-- <i class="fa-solid fa-plane-circle-check primary-gray "></i> &nbsp; -->
+                                <span class=" text-primaryRed ">Flight Payment</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- <a href="./lmia.html">
                         <div
                             class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                             <div class='flex items-center gap-4 text-secondary '>
@@ -210,11 +247,11 @@
                         <div
                             class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
                             <div class='flex items-center gap-4 text-secondary '>
-                               <i class="fa-solid fa-plane-circle-check text-primaryRed text-sm"></i>
+                                <i class="fa-solid fa-plane-circle-check text-primaryRed text-sm"></i>
                                 <span>Flight</span>
                             </div>
                         </div>
-                    </a>
+                    </a> -->
                     <a href="./task.html">
                         <div
                             class=' text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
@@ -336,13 +373,15 @@
                                 <div class="flex gap-4 flex-col lg:flex-row">
                                     <div
                                         class=" bg-white border    lg:h-[250px] items-center justify-center flex text-xs">
-                                        <canvas style=" height: 228px; display: block; width: 200px;" id="myChart1"></canvas>
+                                        <canvas style=" height: 228px; display: block; width: 200px;"
+                                            id="myChart1"></canvas>
                                     </div>
                                     <div
                                         class="h-[300px] bg-white border   lg:h-[250px] items-center justify-center flex text-xs">
 
-                                        <canvas  style=" height: 228px; display: block; width: 200px;"  id="myChart2"></canvas>
-                                    </div> 
+                                        <canvas style=" height: 228px; display: block; width: 200px;"
+                                            id="myChart2"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -725,6 +764,24 @@
             }
         }
 
+        // function Invoice(data) {
+        //     if (data == 1) {
+        //         document.getElementById("invoice-child").style.height = "75px";
+        //         document.getElementById("invoice-child").style.opacity = "100";
+        //         document.getElementById("invoice-child").style.marginBottom = "0.5rem";
+        //         document.getElementById("invoice-child").style.marginTop = "0.5rem";
+        //     }
+        //     else {
+        //         $("#invoice-child").hide()
+        //     }
+
+
+
+
+
+
+        // }
+
 
 
 
@@ -917,6 +974,15 @@
 
 
 
+
+
+    </script>
+
+    <script>
+        function myFunction() {
+            var element = document.getElementById("invoice-child");
+            element.classList.toggle("dropdown-content");
+        }
     </script>
 
 
