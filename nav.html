@@ -60,7 +60,11 @@
 
 
 
+
+
     }
+
+    
 </style>
 
 <body>
@@ -208,11 +212,21 @@
                         </div>
                     </a>
                     <a>
-                        <div onclick="myFunction()"
-                            class='dropbtn text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
-                            <div class='flex items-center gap-4 text-secondary '>
-                                <i class="fa-solid fa-money-check text-primaryRed text-sm"></i>
-                                <span>Invoice</span>
+                        <div onclick="myFunction(`4`)" id="button"
+                            class='dropbtn  text-black border border-gray-300 hover:border-r-4 hover:border-r-main  px-4 h-[35px] w-11/12  m-auto flex items-center transition-all duration-400'>
+                            <div class='flex items-center gap-4 text-secondary w-full justify-between'>
+                                <div class='flex gap-5'>
+                                    <i class="fa-solid fa-money-check text-primaryRed text-sm"></i>
+                                    <span>Invoice</span>
+                                </div>
+                                <div class="downcaret">
+                                    <i id="down" class="fa-solid fa-caret-down"></i>
+                                  
+                                </div>
+                                <!-- <div class="upcaret">
+                                    <i id="upcaret" class="fa-solid fa-caret-up upcaret"></i>
+                                </div> -->
+
                             </div>
                         </div>
                         <div id="invoice-child"
@@ -747,6 +761,7 @@
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 
 
@@ -764,15 +779,19 @@
             }
         }
 
-        // function Invoice(data) {
-        //     if (data == 1) {
-        //         document.getElementById("invoice-child").style.height = "75px";
-        //         document.getElementById("invoice-child").style.opacity = "100";
-        //         document.getElementById("invoice-child").style.marginBottom = "0.5rem";
-        //         document.getElementById("invoice-child").style.marginTop = "0.5rem";
+        // function myFunction(data) {
+        //     if (data == 4) {
+        //         document.getElementById("upcaret").style.visibility = "show";
         //     }
-        //     else {
-        //         $("#invoice-child").hide()
+
+
+
+        // }
+
+        // function myFunction(data) {
+        //     if (data) {
+        //         document.getElementById("upcaret").style.display = "hidden ";
+
         //     }
 
 
@@ -983,8 +1002,25 @@
             var element = document.getElementById("invoice-child");
             element.classList.toggle("dropdown-content");
         }
+
+        // $(document).ready(function () {
+        //     $("#button").click(function () {
+        //         $("upcaret").show();
+        //     });
+        //     $("#button").click(function () {
+        //         $("").hide();
+        //     });
+        // });
     </script>
 
+<!-- <script>
+   $(document).ready(function(){
+  $("button").click(function(){
+    $("p").toggle();
+  });
+});
+
+</script> -->
 
 
 
